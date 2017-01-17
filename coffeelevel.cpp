@@ -1,5 +1,5 @@
 void loop() {
-  // Get some data
+  // Get some data from GPIO pins
    int depth = 0;
    int pinA1 = A1;
    int pinA2 = A2;
@@ -32,10 +32,9 @@ void loop() {
        //Particle.publish("testEvent", String("pin5"), PRIVATE);
        depth ++;
    }
- // String data = String((a1,a2,a3,a4,a5));
-  // Trigger the integration
+
   Particle.publish("testEvent", String(("depth: ",depth)), PRIVATE);
-  // Wait 60 seconds
+  // Wait 10 seconds
   delay(10000);
 }
       
